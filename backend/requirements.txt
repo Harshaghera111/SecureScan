@@ -1,0 +1,38 @@
+# FastAPI Core
+fastapi>=0.115.0
+uvicorn[standard]>=0.34.0
+python-multipart>=0.0.20
+
+# Database
+sqlalchemy>=2.0.36
+aiosqlite>=0.20.0
+# asyncpg>=0.30.0  # uncomment for PostgreSQL
+# alembic>=1.14.0   # uncomment for migrations
+
+# Auth
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+bcrypt>=4.2.0
+
+# Validation & Settings
+pydantic>=2.10.0
+pydantic-settings>=2.7.0
+email-validator>=2.2.0
+
+# AI / ML
+Pillow>=11.0.0
+numpy>=2.2.0
+
+# Rate Limiting
+slowapi>=0.1.9
+
+# CORS & Security
+python-dotenv>=1.0.0
+
+# Testing
+pytest>=8.3.0
+pytest-asyncio>=0.25.0
+httpx>=0.28.0
+
+# Linting
+ruff>=0.8.0
