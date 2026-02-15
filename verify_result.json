@@ -1,0 +1,19 @@
+{
+  "rce": {
+    "found": true,
+    "score": 76,
+    "issues": [
+      "OS Command Injection — Data Flow Confirmed",
+      "Missing Input Validation",
+      "Missing Security Headers"
+    ]
+  },
+  "context": {
+    "nosqlSuppressed": true,
+    "sqlFound": true,
+    "issues": [
+      "SQL Injection — Data Flow Confirmed",
+      "Missing Input Validation"
+    ]
+  }
+}
