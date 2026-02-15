@@ -1,32 +1,46 @@
-# SecureScan - AI Security Analyzer
+# SecureScan
 
-SecureScan is an AI-powered security analysis tool for code, text, and images. It runs entirely in the browser using client-side JavaScript.
+**SecureScan** is an advanced, AI-powered security intelligence tool designed to analyze code, text, and system logs for potential vulnerabilities and threats. It provides real-time risk assessment, security scoring, and actionable insights to help developers and security professionals identify and mitigate issues.
 
-## 🚀 How to Run
+![SecureScan Demo](assets/demo/demo.png)
 
-### Method 1: Direct Open (Easiest)
-Simply double-click `index.html` to open it in your default web browser. No server required.
+## Key Features
 
-file:///d:/Gitdemo/SecureScan/index.html
+*   **Multi-Modal Analysis**: capable of analyzing raw text, code snippets, and system logs.
+*   **AI-Powered Detection**: Utilizes advanced LLMs to identify subtle security risks that traditional regex-based tools might miss.
+*   **Real-Time Risk Scoring**: Instantly calculates a security score (0-100) and assigns a risk level (Low, Medium, High, Critical).
+*   **Detailed Reporting**: Provides a breakdown of key issues, including their severity and specific details.
+*   **Clean, Professional UI**: A modern, dark-themed interface focused on usability and clarity.
 
-### Method 2: Local Server (Optional)
-If you prefer running it on a local server (recommended for better asset loading):
+## Installation
 
-**Using Python:**
-```bash
-python -m http.server 8000
-# Then open http://localhost:8000
-```
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/Harshaghera111/SecureScan.git
+    ```
+2.  Navigate to the project directory:
+    ```bash
+    cd SecureScan
+    ```
 
-**Using Node.js:**
-```bash
-npx serve .
-# Then open http://localhost:3000
-```
+## Usage
 
-## 🛠️ Verification Script
-To verify the core engine logic (headless mode):
-```bash
-node verify_v5.js
-```
-This runs the analysis engine against test payloads and outputs results to `verify_result.json`.
+1.  Open `index.html` in your web browser.
+2.  Select the type of content you want to analyze (Code, Text, or Logs).
+3.  Paste your content into the input area.
+4.  Click **Analyze Security**.
+5.  View the detailed analysis results, including the security score and identified issues.
+
+## Technologies Used
+
+*   **HTML5 & CSS3**: For the structure and modern, responsive design.
+*   **JavaScript (ES6+)**: Core application logic and DOM manipulation.
+*   **AI Integration**: Built to interface with LLM APIs for deep analysis.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).
