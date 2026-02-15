@@ -5,6 +5,7 @@ python-multipart>=0.0.20
 
 # Database
 sqlalchemy>=2.0.36
+asyncpg>=0.30.0
 aiosqlite>=0.20.0
 # asyncpg>=0.30.0  # uncomment for PostgreSQL
 # alembic>=1.14.0   # uncomment for migrations

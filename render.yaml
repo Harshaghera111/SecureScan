@@ -1,0 +1,34 @@
+# Render.com Blueprint — One-click deploy
+# Go to https://render.com/deploy and connect your GitHub repo
+
+databases:
+  - name: securescan-db
+    plan: free
+    databaseName: securescan
+    user: securescan
+
+services:
+  - type: web
+    name: securescan-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: securescan-db
+          property: connectionURI
+      - key: DEBUG
+        value: false
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: SECRET_KEY
+        generateValue: true
+      - key: LLM_PROVIDER
+        value: mock
+      - key: ALLOWED_ORIGINS
+        value: https://harshaghera111.github.io
+      - key: PYTHON_VERSION
+        value: "3.12.0"

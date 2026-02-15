@@ -10,11 +10,18 @@ from app.config import get_settings
 
 settings = get_settings()
 
+# Render.com gives postgres:// but SQLAlchemy needs postgresql+asyncpg://
+db_url = settings.DATABASE_URL
+if db_url.startswith("postgres://"):
+    db_url = db_url.replace("postgres://", "postgresql+asyncpg://", 1)
+elif db_url.startswith("postgresql://"):
+    db_url = db_url.replace("postgresql://", "postgresql+asyncpg://", 1)
+
 engine_kwargs = {"echo": settings.DEBUG}
-if "sqlite" not in settings.DATABASE_URL:
+if "sqlite" not in db_url:
     engine_kwargs.update({"pool_size": 20, "max_overflow": 10, "pool_pre_ping": True})
 
-engine = create_async_engine(settings.DATABASE_URL, **engine_kwargs)
+engine = create_async_engine(db_url, **engine_kwargs)
 
 async_session = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
 
